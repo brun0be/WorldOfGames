@@ -5,6 +5,7 @@
 import GuessGame
 import MemoryGame
 import CurrencyRouletteGame
+import Score
 
 
 def welcome(name):
@@ -47,8 +48,12 @@ while True:
     new_game_selection = new_game.get('selected_game')
     new_level_selection = new_game.get('selected_level')
     if int(new_game_selection) == 1:
-        MemoryGame.play(int(new_level_selection))
+        result = MemoryGame.play(int(new_level_selection))
     elif int(new_game_selection) == 2:
-        GuessGame.play(int(new_level_selection))
+        result = GuessGame.play(int(new_level_selection))
     elif int(new_game_selection) == 3:
-        CurrencyRouletteGame.play(int(new_level_selection))
+        result = CurrencyRouletteGame.play(int(new_level_selection))
+    # If the user win the game invoke the score
+    if result:
+        Score.add_score(int(new_level_selection))
+

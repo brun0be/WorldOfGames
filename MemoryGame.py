@@ -1,7 +1,5 @@
-import numpy as np
 from numpy import random
 from time import sleep
-import sys
 import os
 
 
@@ -14,16 +12,26 @@ def generate_sequence(difficulty):
 
 
 def get_list_from_user():
-    user_list = input('Enter the numbers you remember?')
+    user_list = []
+    lst = input('Enter the numbers you remember?')
+    lst = lst.split()
+    for i in lst:
+        user_list.append(int(i))
     return user_list
 
 
 def is_list_equal(list1, list2):
+    if len(list1) != len(list2) or len(list2) == 0:
+        print("Too bad, you loose, next time")
+        return False
+
     comparison = [i == int(j) for i, j in zip(list1, list2)]
     if all(comparison):
         print("You win!!")
+        return True
     else:
         print("Too bad, you loose, next time")
+        return False
 
 
 def play(difficulty):
@@ -31,8 +39,7 @@ def play(difficulty):
     # print(seq)
     user_numbers = get_list_from_user()
     # print(user_numbers)
-    user_numbers = user_numbers.split()
-    is_list_equal(seq, user_numbers)
-
+    game_result = is_list_equal(seq, user_numbers)
+    return game_result
 
 

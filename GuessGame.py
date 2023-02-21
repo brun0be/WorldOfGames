@@ -13,8 +13,10 @@ def get_guess_from_user(difficulty):
 def compare_results(number1, number2):
     if number1 == number2:
         print("You win!!")
+        return True
     else:
         print("Too bad, you loose, next time")
+        return False
 
 
 def play(difficulty):
@@ -22,6 +24,6 @@ def play(difficulty):
     # print(secret_number)
     user_number = get_guess_from_user(difficulty)
     # print(user_number)
-    compare_results(secret_number, int(user_number))
-
+    game_result = compare_results(secret_number, int(user_number))
+    return game_result
 

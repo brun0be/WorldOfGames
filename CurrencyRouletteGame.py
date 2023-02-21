@@ -35,12 +35,14 @@ def get_guess_from_user(guess):
     user_guess = input(f'Enter your guess exchange for {value} from USD to ILS?')
     if int(user_guess) in range(low, high):
         print("You win!!")
+        return True
     else:
         print("Too bad, you loose, next time")
+        return False
 
 
 def play(difficulty):
     guess = get_money_interval(difficulty)
-    get_guess_from_user(guess)
-
+    game_result = get_guess_from_user(guess)
+    return game_result
 
