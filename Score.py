@@ -12,5 +12,3 @@ def add_score(difficulty):
     score_file.writelines(new_score)
     score_file.close()
 
-add_score(3)
-

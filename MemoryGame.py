@@ -1,13 +1,14 @@
 from numpy import random
 from time import sleep
-import os
+
+import Utils
 
 
 def generate_sequence(difficulty):
     gen_seq = random.randint(low=1, high=101, size=difficulty)
     print(gen_seq, flush=True)
     sleep(0.7)
-    os.system('clear')
+    Utils.screen_cleaner()
     return gen_seq
 
 
