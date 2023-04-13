@@ -23,12 +23,13 @@ def e2e_test_service(app_url):
 
 
 def main_function():
-    app_url = "http://127.0.0.1:5000/"
+    app_url = "http://127.0.0.1:8777/"
     if e2e_test_service(app_url):
         print("Test passed!")
         sys.exit(0)
     else:
         print("Test failed.")
         sys.exit(-1)
+
 
 main_function()
