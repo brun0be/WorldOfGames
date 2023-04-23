@@ -19,6 +19,7 @@ pipeline {
         }
         stage('E2E Test') {
             steps {
+                sh 'pip3 install selenium'
                 sh 'python3 ./tests/e2e.py'
             }
         }
