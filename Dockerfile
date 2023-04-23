@@ -8,7 +8,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 8777
 
 # Start the Flask app
 CMD ["python", "MainScores.py"]
