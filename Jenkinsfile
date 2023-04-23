@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'docker run -d -p8777:5000 docker1906/wog-app'
+                sh 'docker run -d -p8777:8777 docker1906/wog-app'
             }
         }
         stage('E2E Test') {
