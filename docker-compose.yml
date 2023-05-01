@@ -8,4 +8,4 @@ services:
     volumes:
       - ./scores.txt:/scores.txt
     ports:
-      - "8777:5000"
+      - "8777:8777"
